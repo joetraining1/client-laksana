@@ -1,0 +1,13 @@
+login page > register page on one
+homepage :
+	- absen form with selection
+	- form to add relatives
+	- card to display salary
+	- relative card display
+admin (supervisor++)
+	- absen datatable
+	- salary datatable
+	- create form page
+	- employee datatable
+	- relatives datatable
+	- search bar
