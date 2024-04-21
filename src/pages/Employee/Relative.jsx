@@ -1,10 +1,11 @@
 import React from 'react'
+import PageContainer from '../../components/PageContainer/PageContainer'
 
 const Relative = () => {
   return (
-    <div>
-      
-    </div>
+    <PageContainer>
+      Relative
+    </PageContainer>
   )
 }
 

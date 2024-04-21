@@ -1,12 +1,12 @@
 import React from 'react'
 import PageContainer from '../../components/PageContainer/PageContainer'
 
-const Absen = () => {
+const Payroll = () => {
   return (
     <PageContainer>
-      Absen
+      Gaji
     </PageContainer>
   )
 }
 
-export default Absen
+export default Payroll
