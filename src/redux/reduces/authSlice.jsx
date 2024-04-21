@@ -15,10 +15,24 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      state.authState = action.payload;
+      (state.authState.email = action.payload?.email
+        ? action.payload.email
+        : state.authState.email),
+        (state.authState.image = action.payload?.image
+          ? action.payload.image
+          : state.authState.image),
+        (state.authState.jabatan = action.payload?.jabatan
+          ? action.payload.jabatan
+          : state.authState.jabatan),
+        (state.authState.name = action.payload?.name
+          ? action.payload.name
+          : state.authState.name),
+        (state.authState.url = action.payload?.url
+          ? action.payload.url
+          : state.authState.url);
     },
     logout: (state, action) => {
-      state.authState = action.payload;
+      state.authState = initialState.authState;
     },
   },
 });

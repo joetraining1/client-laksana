@@ -1,3 +1,4 @@
+import Guest from "./lib/layouts/Guest";
 import Main from "./lib/layouts/Main";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -8,8 +9,10 @@ function App() {
   return (
     <Routes>
       <Route path="/">
-        <Route path="login" element={<Login />}>
-          <Route path="register" element={<Register />} />
+        <Route element={<Guest />}>
+          <Route path="login" element={<Login />}>
+            <Route path="register" element={<Register />} />
+          </Route>
         </Route>
         <Route element={<Main />}>
           <Route index element={<Home />} />

@@ -1,16 +1,26 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Outlet, useNavigate } from 'react-router-dom'
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Outlet, useNavigate } from "react-router-dom";
+import Topbar from "../../components/topbar/Topbar";
+import MassWidth from "../parts/MassWidth/MassWidth";
 
 const Main = () => {
-    const employee = useSelector((state) => state.auth.authState)
-    const navigate = useNavigate()
+  const employee = useSelector((state) => state.auth.authState);
+  const navigate = useNavigate();
 
-    employee.email === "" && navigate('/login')
+  // console.log(employee)
 
+  useEffect(() => {
+    employee.email === "" && navigate("/login");
+  }, [employee]);
   return (
-    <Outlet />
-  )
-}
+    <React.Fragment>
+      <Topbar />
+      <MassWidth>
+        <Outlet />
+      </MassWidth>
+    </React.Fragment>
+  );
+};
 
-export default Main
+export default Main;
