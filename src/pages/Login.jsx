@@ -4,7 +4,7 @@ import MassWidth from "../lib/parts/MassWidth/MassWidth";
 import { FlexColumn } from "../constant/Styles";
 import LoginContainer from "../components/LoginContainer/LoginContainer";
 
-const Login = () => {
+const Login = ({ hero }) => {
   return (
     <React.Fragment>
       <MassWidth
@@ -14,7 +14,7 @@ const Login = () => {
           alignItems: "center",
         }}
       >
-        <LoginContainer />
+        <LoginContainer title={hero} />
       </MassWidth>
       <Outlet />
     </React.Fragment>

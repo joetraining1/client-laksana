@@ -7,6 +7,8 @@ const initialState = {
     name: "",
     jabatan: "",
     url: "",
+    type: 1,
+    for: "",
   },
 };
 

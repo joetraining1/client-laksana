@@ -3,7 +3,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../redux/reduces/authSlice";
 import { h4FontStyle } from "../../../constant/Styles";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Colors } from "../../../constant/Colors";
 
 const Sides = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const Sides = () => {
         height: "100%",
         width: "auto",
         gap: "1vw",
-        alignItems: 'center'
+        alignItems: "center",
       }}
     >
       <Typography
@@ -32,12 +33,26 @@ const Sides = () => {
           fontWeight: "500",
           fontSize: "16px",
         }}
-      >{`Hi, ${employee.email}`}</Typography>
-      <Divider orientation="vertical" sx={{
-        width: '1px',
-        height: '90%',
-        backgroundColor: '#fff'
-      }}/>
+      >
+        Hi, &nbsp;
+        <NavLink
+          style={{
+            textDecoration: "none",
+            color: Colors.yellow,
+          }}
+          to={`/profile/${employee.email}`}
+        >
+          {employee.email}
+        </NavLink>
+      </Typography>
+      <Divider
+        orientation="vertical"
+        sx={{
+          width: "2px",
+          height: "90%",
+          backgroundColor: "#fff",
+        }}
+      />
       <Button
         variant="text"
         sx={{

@@ -4,7 +4,7 @@ import { FlexBasic, h4FontStyle } from "../../constant/Styles";
 import { Typography } from "@mui/material";
 import LoginForms from "../forms/LoginForms";
 
-const LoginContainer = () => {
+const LoginContainer = ({ title }) => {
   return (
     <div
       style={{
@@ -30,9 +30,9 @@ const LoginContainer = () => {
           fontSize: "14px",
         }}
       >
-        login untuk pegawai.
+        login untuk {title}.
       </Typography>
-      <LoginForms />
+      <LoginForms prefix={title} />
     </div>
   );
 };

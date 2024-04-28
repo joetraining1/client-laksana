@@ -6,22 +6,27 @@ import { useDispatch, useSelector } from "react-redux";
 import authSlice, { login } from "../../redux/reduces/authSlice";
 import { useNavigate } from "react-router-dom";
 
-const LoginForms = () => {
+const LoginForms = ({ prefix }) => {
   const inputWidthSize = "60%";
   const emailRef = useRef();
   const passRef = useRef();
 
-  const employee = useSelector((state) => state.auth.authState)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const employee = useSelector((state) => state.auth.authState);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const LoginSequence = async() => {
-    dispatch(login({
-      email: emailRef.current.value
-    }))
-    navigate("/")
-    return
-  }
+  const LoginSequence = async () => {
+    if (!emailRef.current.value || !passRef.current.value) {
+      return;
+    }
+    dispatch(
+      login({
+        email: emailRef.current.value,
+      })
+    );
+    prefix === "administrator" ? navigate("/dashboard") : navigate("/");
+    return;
+  };
 
   return (
     <div
